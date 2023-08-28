@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with Google</title>
+    <style>
+        /* Center the content in the middle of the page */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Style for the Google login button */
+        .google-login-button {
+            display: flex;
+            align-items: center;
+            background-color: #ff4b4b;
+            color: white;
+            width: 240px;
+            height: 50px;
+            border-radius: 5px;
+            box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+            cursor: pointer;
+        }
+        .google-logo {
+            width: 18px;
+            height: 18px;
+            margin: 8px;
+        }
+        .button-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- code used to add google button -->
+    <div class="google-login-button" onclick="performGoogleLogin()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" class="google-logo">
+        <span class="button-text">Login with Google</span>
+    </div>
+
+    <script>
+        function performGoogleLogin() {
+            window.open('http://localhost:3000/google-sso/create-auth-link', '_blank');
+        }
+    </script>
+    <!-- done -->
+
+</body>
+</html>
