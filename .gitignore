@@ -29,3 +29,6 @@ archive.zip
 secret.json
 # macOS
 .DS_Store
+
+# Ignore key files
+*.pem
