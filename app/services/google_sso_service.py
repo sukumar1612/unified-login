@@ -21,7 +21,7 @@ class GoogleAuthService:
             }
         }
 
-    def fetch_flow_auth_url(self) -> str:
+    def fetch_flow_auth_url(self, redirect_url: str) -> str:
         flow = google_auth_oauthlib.flow.Flow.from_client_config(
             self.get_flow_credentials(),
             scopes=[
@@ -36,6 +36,7 @@ class GoogleAuthService:
             access_type="offline",
             include_granted_scopes="true",
             prompt="consent",
+            state=redirect_url
         )
         return authorization_url
 
