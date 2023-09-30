@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from starlette.middleware.sessions import SessionMiddleware
 
 from app.container import AppContainer
-from app.routers import google_sso, sample_button
+from app.routers import google_sso, sample_button, spreadsheet_sync
 import app.services.router_dependencies
 
 main_app = FastAPI()
@@ -20,13 +20,7 @@ container.wire(modules=[__name__, app.services.router_dependencies])
 
 main_app.include_router(google_sso.router)
 main_app.include_router(sample_button.router)
+main_app.include_router(spreadsheet_sync.router)
 
 if __name__ == '__main__':
     uvicorn.run(main_app, port=3000)
-
-# oauth2.0 specs
-# /authorize
-# /token
-# /introspect
-# /revoke
-# /userinfo

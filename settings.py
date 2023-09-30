@@ -7,3 +7,4 @@ class Settings(BaseSettings):
     redirect_uris: list[str]
     private_key_path: str
     jwt_expire_time: int
+    user_sheet_id: str
